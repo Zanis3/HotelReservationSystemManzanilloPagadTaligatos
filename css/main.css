@@ -1,0 +1,32 @@
+@import "variables.css";
+@import "layout.css";
+@import "components.css";
+@import "util.css";
+
+/*main.css - Reset rules (Normalize.css), HTML/Body tags, typography scales.*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img{
+    pointer-events:none;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+[data-lucide] {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+    vertical-align: middle;
+}

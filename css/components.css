@@ -1,0 +1,51 @@
+/*components.css = where the pre-made components are (buttons, cards, etc.)*/
+
+.btn-reservation-header{
+    width:150px;
+    height:60px !important;
+
+    background: var(--primary);
+    
+    font-family: var(--font-body);
+    font-weight: var(--font-bold);
+    font-size: var(--ui);
+    color: var(--text-white) !important;
+
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.btn-reservation-header:hover{
+    background: var(--primary-hover) !important;
+    color: var(--text-white) !important;
+}
+
+.btn-reservation-header:active{
+    background: var(--primary-pressed) !important;
+    color: var(--text-white) !important;
+}
+
+.btn-cta-header{
+    width: 200px;
+    height:60px;
+
+    background: var(--accent);
+
+    font-family: var(--font-body);
+    font-weight: var(--font-bold);
+    font-size: var(--ui);
+    color: var(--text-main);
+
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.btn-cta-header:hover{
+    background: var(--accent-hover) !important;
+    color: var(--text-main) !important;
+}
+
+.btn-cta-header:active{
+    background: var(--accent-pressed) !important;
+    color: var(--text-main) !important;
+}

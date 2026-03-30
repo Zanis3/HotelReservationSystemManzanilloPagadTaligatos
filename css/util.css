@@ -1,0 +1,13 @@
+/*Flex*/
+
+.d-flex{ display:flex !important; }
+
+.align-center{ align-items:center !important; }
+.justify-between{ justify-content: space-between !important; }
+.justify-center{ justify-content:center !important; }
+
+.flex-column{ flex-direction:column !important; }
+
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
+.gap-40 { gap: 40px; }

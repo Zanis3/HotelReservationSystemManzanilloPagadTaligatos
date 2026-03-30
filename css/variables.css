@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/*variables.css = where we assign the variables inside root...*/
+
+
+:root {
+    /*Fonts*/
+    --font-heading: 'Playfair Display', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /*Font Sizes*/
+    --page-heading: 64px;
+    --section-heading: 36px;
+
+    --page-body: 16px;
+    --ui: 16px;
+
+    /*Font Weight*/
+    --font-bold: bold;
+
+    /*Color Palette*/
+
+    /*Brand*/
+    
+    /*Primary (Teal)*/
+    --primary: #5F9EA0;
+    --primary-hover: #4d8284;
+    --primary-pressed: #3d6668;
+    --primary-disabled: #a0c2c3;
+
+    /*Secondary (Sky Blue)*/
+    --secondary: #7BC6E5;
+    --secondary-hover: #5daed1;
+    --secondary-pressed: #4491b4;
+    --secondary-disabled: #bcdfeb;
+
+    /*Accent (Sand/Gold)*/
+    --accent: #F9D057;
+    --accent-hover: #e0b63a;
+    --accent-pressed: #c29d2b;
+    --accent-disabled: #fce8ad;
+
+    /*Neutrals*/
+    --bg-main: #F4F9F9;
+    --bg-white: #FFFFFF;
+    --text-main: #2C3E50;
+    --text-light: #7F8C8D;
+    --text-white: #F4F9F9;
+
+    /*Functional*/
+    --success: #27ae60;
+    --failure: #e74c3c;
+}

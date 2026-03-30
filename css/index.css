@@ -1,0 +1,41 @@
+/*Hero*/
+.hero{
+    position: relative;
+    height:100vh;
+    width:100%;
+
+    background-image: url('../img/hero-background.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:cover;
+    background-attachment: fixed;
+    
+    z-index:1;
+}
+
+.hero::after{
+    content: '';
+
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background-color: rgba(123, 198, 229, 0.3);
+    z-index:-1;
+}
+
+.hero .container{
+    height:100%;
+}
+
+.hero-title{
+    font-family: var(--font-heading);
+    font-size: var(--page-heading);
+}
+
+.hero-desc{
+    font-family: var(--font-body);
+    font-size: var(--section-heading);
+}
