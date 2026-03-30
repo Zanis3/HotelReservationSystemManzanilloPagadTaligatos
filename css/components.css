@@ -48,4 +48,58 @@
 .btn-cta-header:active{
     background: var(--accent-pressed) !important;
     color: var(--text-main) !important;
+}   
+
+.btn-reservation-submit-btn{
+    width:150px;
+    height:60px !important;
+
+    background: var(--success);
+    
+    font-family: var(--font-body);
+    font-weight: var(--font-bold);
+    font-size: var(--ui);
+    color: var(--text-white) !important;
+
+    border-radius: 10px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-reservation-submit-btn:hover{
+    background: var(--success-hover) !important;
+    color: var(--text-white) !important;
+}
+
+.btn-reservation-submit-btn:active{
+    background: var(--success-pressed) !important;
+    color: var(--text-white) !important;
+}
+
+.btn-reservation-reset-btn{
+    width:150px;
+    height:60px !important;
+
+    background: var(--failure);
+    
+    font-family: var(--font-body);
+    font-weight: var(--font-bold);
+    font-size: var(--ui);
+    color: var(--text-white) !important;
+
+    border-radius: 10px;
+    transition: 0.4s ease;
+    cursor:pointer;
+    border:none;
+}
+
+.btn-reservation-reset-btn:hover{
+    background: var(--failure-hover) !important;
+    color: var(--text-white) !important;
+}
+
+.btn-reservation-reseet-btn:active{
+    background: var(--failure-pressed) !important;
+    color: var(--text-white) !important;
 }

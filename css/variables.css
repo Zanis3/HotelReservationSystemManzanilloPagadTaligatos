@@ -48,6 +48,14 @@
     --text-white: #F4F9F9;
 
     /*Functional*/
+    
+    /* Success Colors */
     --success: #27ae60;
+    --success-hover: #2ecc71;
+    --success-pressed: #1e8449;
+
+    /* Failure Colors */
     --failure: #e74c3c;
+    --failure-hover: #ff5e4d;
+    --failure-pressed: #c0392b;
 }
