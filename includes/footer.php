@@ -11,7 +11,7 @@
             <li class="footer-nav-item"><a href="index.php">Home</a></li>
             <li class="footer-nav-item"><a href="companyprofile.php">Company Profile</a></li>
             <li class="footer-nav-item"><a href="contacts.php">Contacts</a></li>
-            <li class="footer-nav-item"><a href="reservation.php">Reserve Now!</a></li>
+            <li class="footer-nav-item"><a href="ReservationManzanilloPagadTaligatos.php">Reserve Now!</a></li>
         </ul>
     </div>
 </div>
