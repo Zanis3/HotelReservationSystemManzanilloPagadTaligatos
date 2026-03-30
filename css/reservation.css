@@ -1,0 +1,66 @@
+/*Reservation Hero*/
+
+.reservation-hero{
+    position: relative;
+    width: 100%;
+    height: 350px;
+
+    background-image: url('../img/reservation-image.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    z-index: 1;
+}
+
+.reservation-hero::after{
+    content: '';
+
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+
+    background-color: rgba(123, 198, 229, 0.3);
+    z-index:-1;
+}
+
+.reservation-hero .container{
+    height:100% !important;
+    z-index:2;
+
+    justify-content: start;
+    align-items: end;
+}
+
+.reservation-heading{
+    font-family: var(--font-heading);
+    font-size: var(--page-heading);
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+/*Reservation Form*/
+
+.reservation-form{
+    width:100%;
+    height:900px;
+
+    border-top: 2px solid var(--primary);
+}
+
+.reservation-form .container{
+    height: 100%;
+}
+
+.date-row{
+    width: 100%;
+    justify-content:end;
+
+    font-family:var(--font-body);
+    color:var(--text-main);
+    font-weight: bold;
+    font-size:var(--page-body)
+}

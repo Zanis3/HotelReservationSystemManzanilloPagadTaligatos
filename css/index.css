@@ -33,9 +33,11 @@
 .hero-title{
     font-family: var(--font-heading);
     font-size: var(--page-heading);
+    color: var(--text-main);
 }
 
 .hero-desc{
     font-family: var(--font-body);
     font-size: var(--section-heading);
+    color: var(--text-main);
 }
