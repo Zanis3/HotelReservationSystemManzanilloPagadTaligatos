@@ -1,0 +1,42 @@
+body{
+    background: var(--bg-main);
+}
+
+.admin-title{
+    font-family: var(--font-heading);
+    font-size: var(--page-heading);
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+table{
+    width:100%;
+    border-collapse: collapse;
+
+    border-radius:20px;
+}
+
+thead{
+    font-family: var(--font-body);
+    font-size: var(--ui);
+    font-weight: bold;
+    color: var(--primary);
+
+    background: var(--secondary-disabled);
+}
+
+tbody{
+    font-family: var(--font-body);
+    font-size: var(--page-body);
+    color: var(--text-main);
+}
+
+thead tr th{
+    border-bottom: 2px solid var(--secondary);
+    padding: 20px;
+}
+
+tbody tr td{
+    text-align: center;
+    padding: 20px;
+}

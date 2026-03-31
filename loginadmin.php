@@ -19,6 +19,11 @@
     session_start();
     require 'includes/dbconn.php';
 
+    if (isset($_SESSION['admin_user'])) {
+        header('Location: admin.php');
+        exit();
+    }
+
     $loginError;
 
     if (isset($_POST['btnSubmit'])) {
@@ -31,7 +36,7 @@
 
         if ($admin && password_verify($password, $admin['adminPass'])) {
             $_SESSION['admin_id'] = $admin['adminID'];
-            $_SESSION['admin_user'] = $admin['adminUsername'];
+            $_SESSION['admin_user'] = $admin['adminName'];
             header('Location: admin.php');
             exit();
         } else {

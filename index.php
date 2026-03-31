@@ -12,7 +12,17 @@
 </head>
 
 <body>
-    <?php include_once('includes/header.php'); ?>
+    <?php
+    session_start();
+    require 'includes/dbconn.php';
+
+    if (isset($_SESSION['admin_user'])) {
+        header('Location: admin.php');
+        exit();
+    }
+
+    include_once('includes/header.php');
+    ?>
 
     <div class="hero">
         <div class="container d-flex flex-column align-center justify-center">
