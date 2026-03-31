@@ -23,7 +23,7 @@
     }
 
     try {
-        $sql = "SELECT r.reservationID, g.guestName, g.guestContact, r.reservationDate, r.reservationRoomType, r.reservationRoomCapacity FROM tbl_reservation r INNER JOIN tbl_guests g ON r.guestID = g.guestID ORDER BY r.reservationDate DESC";
+        $sql = "SELECT r.reservationID, g.guestName, g.guestContact, r.reservationDate, r.reservationRoomType, r.reservationRoomCapacity FROM tbl_reservation r INNER JOIN tbl_guests g ON r.guestID = g.guestID ORDER BY r.reservationID ASC";
 
         $stmt = $pdo->query($sql);
         $reservations = $stmt->fetchAll();
@@ -73,7 +73,7 @@
                                     <div class="d-flex gap-10 justify-center">
                                         <a href="UpdateReservation.php?id=<?= $row['reservationID'] ?>" class="btn-reservation-header d-flex justify-center align-center" style="width:60px; height:60px;"><i data-lucide="eye"></i></a>
 
-                                        <a href="#" class="btn-reservation-reset-btn d-flex justify-center align-center" style="width:60px; height:60px;"><i data-lucide="trash"></i></a>
+                                        <a href="DeleteReservation.php?id=<?= $row['reservationID'] ?>" class="btn-reservation-reset-btn d-flex justify-center align-center" style="width:60px; height:60px;" onclick="return confirm('Are you sure you want to delete this reservation?');"><i data-lucide="trash"></i></a>
                                     </div>
                                 </td>
                             </tr>

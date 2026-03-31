@@ -121,7 +121,7 @@
 
     <div class="reservation-hero">
         <div class="container d-flex">
-            <h1 class="reservation-heading">Billing Confirmation</h1>
+            <h1 class="reservation-heading">Update Billing Confirmation</h1>
         </div>
     </div>
 
