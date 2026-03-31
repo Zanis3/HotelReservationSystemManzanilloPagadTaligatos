@@ -13,6 +13,8 @@
 
     border-radius: 10px;
     transition: 0.4s ease;
+
+    cursor:pointer;
 }
 
 .btn-reservation-header:hover{
@@ -102,4 +104,11 @@
 .btn-reservation-reseet-btn:active{
     background: var(--failure-pressed) !important;
     color: var(--text-white) !important;
+}
+
+.warning{
+    font-family: var(--font-body);
+    font-size: var(--page-body);
+    font-weight: bold;
+    color: var(--failure);
 }

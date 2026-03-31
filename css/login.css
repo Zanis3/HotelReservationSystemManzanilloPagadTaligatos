@@ -1,0 +1,32 @@
+.login-container{
+    height:100vh;
+}
+
+.login-left{
+    background: var(--bg-main);
+    width: 50%;
+    height: 100%;
+}
+
+.login-fields{
+    width: 400px !important;
+}
+
+.login-right{
+    content:'';
+
+    background: url('../img/reservation-image.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    
+    width:50%;
+    height: 100%;
+}
+
+.login-title{
+    font-style: var(--heading-font);
+    color: var(--text-main);
+    font-size: var(--page-heading);
+    font-weight: var(--font-bold);
+}

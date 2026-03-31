@@ -24,6 +24,34 @@ a{
     color: var(--text-main);
 }
 
+/*Reservation*/
+
+label{
+    font-size: var(--ui);
+    font-weight: bold;
+    font-family: var(--font-body);
+    color: var(--text-main);
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="password"]{
+    width:200px;
+    height:50px;
+    padding:10px 10px;
+    border-radius:10px;
+    border: 2px solid var(--secondary);
+    color: var(--text-light);
+
+    transition: all 0.4s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="password"]:focus{
+    outline: 2px solid var(--accent);
+}
+
+#mi{
+    width:50px !important;
+}
+
 [data-lucide] {
     width: 20px;
     height: 20px;
