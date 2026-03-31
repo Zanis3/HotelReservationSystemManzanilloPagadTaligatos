@@ -9,6 +9,7 @@
 <body>
     <?php
     session_start();
+    require('includes/dbconn.php');
     include_once('includes/header.php');
 
     if (!isset($_SESSION['name'])) {
@@ -59,10 +60,51 @@
     $totalDiscount = $discount * $noDays;
     $grandTotal = $subTotal - $totalDiscount;
 
-    // Handle Confirmation
+    #PDO Logic
     if (isset($_POST['btnConfirm'])) {
-        header('Location: ReservationConfirmation.php');
-        exit();
+        try {
+            $pdo->beginTransaction();
+
+            $stmt = $pdo->prepare("SELECT guestID FROM tbl_guests WHERE guestName = ? LIMIT 1");
+            $stmt->execute([$customerName]);
+            $guestData = $stmt->fetch();
+
+            if ($guestData) {
+                $guestID = $guestData['guestID'];
+            } else {
+                $stmt = $pdo->prepare("INSERT INTO tbl_guests (guestName, guestContact) VALUES (?, ?)");
+                $stmt->execute([$customerName, $customerContact]);
+                $guestID = $pdo->lastInsertId();
+            }
+
+            $stmt = $pdo->prepare("INSERT INTO tbl_reservation 
+                    (guestID, reservationDate, reservationStartDate, reservationEndDate, reservationRoomType, reservationRoomCapacity, reservationPaymentType, reservationNoOfDays) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([
+                $guestID,
+                $reservationDate,
+                $fromDateReservation,
+                $toDateReservation,
+                $roomType,
+                $roomCapacity,
+                $paymentType,
+                $noDays
+            ]);
+
+            $stmt = $pdo->prepare("INSERT INTO tbl_payments (guestID, paymentSubTotal, paymentDiscount, paymentGrandTotal) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$guestID, $subTotal, $totalDiscount, $grandTotal]);
+
+            $pdo->commit();
+
+            $_SESSION['name'] = $customerName;
+            header('Location: ReservationConfirmation.php');
+            exit();
+        } catch (PDOException $e) {
+            if ($pdo->inTransaction()) {
+                $pdo->rollBack();
+            }
+            die("Database Error: " . $e->getMessage());
+        }
     }
     ?>
 
@@ -138,47 +180,6 @@
                 <p><?php echo number_format($grandTotal, 2) ?? ''; ?></p>
             </div>
 
-            <?php
-            if (isset($_POST['btnConfirm'])) {
-                try {
-                    $stmt = $pdo->prepare("SELECT * FROM tbl_guests WHERE guestName = ? LIMIT 1");
-                    $stmt->execute([$customerName]);
-                    $guestData = $stmt->fetch();
-
-                    if ($guestData) {
-                        $guestID = $guestData['guestID'];
-                    } else {
-                        $stmt = $pdo->prepare("INSERT INTO tbl_guests (guestName, guestContact) VALUES (?, ?)");
-                        $stmt->execute([$customerName, $customerContact]);
-                        $guestID = $pdo->lastInsertId();
-                    }
-
-                    $stmt = $pdo->prepare("INSERT INTO tbl_reservation 
-                    (guestID, reservationDate, reservationStartDate, reservationEndDate, reservationRoomType, reservationRoomCapacity, reservationPaymentType, reservationNoOfDays) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                    $stmt->execute([
-                        $guestID,
-                        $reservationDate,
-                        $fromDateReservation,
-                        $toDateReservation,
-                        $roomType,
-                        $roomCapacity,
-                        $paymentType,
-                        $noDays
-                    ]);
-
-                    $stmt = $pdo->prepare("INSERT INTO tbl_payments (guestID, paymentSubTotal, paymentDiscount, paymentGrandTotal) VALUES (?, ?, ?, ?)");
-                    $stmt->execute([$guestID, $subTotal, $totalDiscount, $grandTotal]);
-
-                    $_SESSION['name'] = $customerName;
-                    header('Location: ReservationConfirmation.php');
-                    exit();
-                } catch (PDOException $e) {
-                    die("Database Error: " . $e->getMessage());
-                }
-            }
-            ?>
-
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="button-container">
                     <input type="submit" name="btnConfirm" value="Confirm" class="btn-reservation-submit-btn">
@@ -189,4 +190,8 @@
     </div>
 
     <?php include_once('includes/footer.php'); ?>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
