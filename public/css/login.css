@@ -1,0 +1,62 @@
+.login-container{
+    height:100vh;
+}
+
+.login-left{
+    background: var(--bg-main);
+    width: 50%;
+    height: 100%;
+}
+
+.login-fields{
+    width: 400px !important;
+}
+
+.login-right{
+    content:'';
+
+    background: url('../img/reservation-image.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    
+    width:50%;
+    height: 100%;
+}
+
+.login-title{
+    font-style: var(--heading-font);
+    color: var(--text-main);
+    font-size: var(--page-heading);
+    font-weight: var(--font-bold);
+}
+
+.password-wrapper{
+    position: relative;
+    width: 400px;
+}
+
+.password-wrapper .login-fields{
+    width: 100% !important;
+    padding-right: 2.5rem;
+}
+
+.btn-toggle-password{
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted, #888);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.btn-toggle-password:hover{
+    color: var(--text-main, #333);
+}

@@ -112,3 +112,70 @@
     font-weight: bold;
     color: var(--failure);
 }
+
+/*Profile & Contact Cards*/
+.profile-section,
+.contact-section{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-title,
+.contact-title{
+    font-family: var(--font-heading);
+    font-size: var(--page-heading);
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.profile-subtitle,
+.contact-subtitle{
+    font-family: var(--font-body);
+    font-size: var(--section-heading);
+    color: var(--text-light);
+}
+
+.profile-card,
+.contact-card{
+    width: 320px;
+    min-height: 280px;
+    padding: 40px 30px;
+    background: var(--bg-white);
+    border-radius: 16px;
+    border: 2px solid var(--secondary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+}
+
+.profile-card:hover,
+.contact-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
+}
+
+.profile-card .card-icon,
+.contact-card .card-icon{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(95, 158, 160, 0.1);
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+.profile-card .card-heading,
+.contact-card .card-heading{
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.profile-card .card-text,
+.contact-card .card-text{
+    font-family: var(--font-body);
+    font-size: var(--page-body);
+    color: var(--text-light);
+    line-height: 1.7;
+}
